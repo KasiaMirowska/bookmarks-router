@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import BookmarksContext from '../BookmarksContext';
 import BookmarkItem from '../BookmarkItem/BookmarkItem';
 import './BookmarkList.css'
+import PropTypes from 'prop-types';
+
 
 class BookmarkList extends Component {
-  static defaultProps = {
-    bookmarks: []
-  };
+  static contextType = BookmarksContext;
 
   render() {
-    const { bookmarks } = this.props
+    const { bookmarks } = this.context
     return (
       <section className='BookmarkList'>
         <h2>Your bookmarks</h2>
@@ -26,3 +27,11 @@ class BookmarkList extends Component {
 }
 
 export default BookmarkList;
+BookmarkList.propTypes = {
+  bookmarks: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    rating: PropTypes.number,
+    description: PropTypes.string
+  }))
+};
