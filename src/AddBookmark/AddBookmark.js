@@ -48,7 +48,7 @@ class AddBookmark extends Component {
         url.value = ''
         description.value = ''
         rating.value = ''
-        this.context.AddBookmark(data)
+        this.context.addBookmark(data)
         this.props.history.push('/')
       })
       .catch(error => {
@@ -63,7 +63,7 @@ class AddBookmark extends Component {
 
   render() {
     const { error } = this.state
-    console.log(this.context)
+   
     return (
       <section className='AddBookmark'>
         <h2>Create a bookmark</h2>
