@@ -9,7 +9,8 @@ class BookmarkList extends Component {
   static contextType = BookmarksContext;
 
   render() {
-    const { bookmarks } = this.context
+    const { bookmarks } = this.context;
+    
     return (
       <section className='BookmarkList'>
         <h2>Your bookmarks</h2>
